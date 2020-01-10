@@ -12,8 +12,14 @@ public class App00 {
         System.out.println(webDriver.getTitle());
         System.out.println(webDriver.getCurrentUrl());
 
+        Thread.sleep(10000);
+
+        webDriver.findElement(By.id("q")).clear();
         webDriver.findElement(By.id("q")).sendKeys("Automation");
-        webDriver.findElement(By.id("q")).sendKeys(Keys.RETURN);
+//        webDriver.findElement(By.id("q")).sendKeys(Keys.RETURN);
+        webDriver.findElement(By.cssSelector("input[type='submit']")).click();
+
+        Thread.sleep(10000);
 
         webDriver.quit();
     }
